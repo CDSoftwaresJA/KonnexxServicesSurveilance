@@ -53,7 +53,7 @@ public class ActivityGuideDeviceSocket extends ActivityDemo implements OnClickLi
 	private Button mBtnPageLeft;
 	private Button mBtnPageRight;
 	private ImageButton mBtnSetting;
-	
+
 	private FunDeviceSocket mFunDevice = null;
 	
 	private final int MESSAGE_DEVICE_CFG_UPDATED = 0x100;

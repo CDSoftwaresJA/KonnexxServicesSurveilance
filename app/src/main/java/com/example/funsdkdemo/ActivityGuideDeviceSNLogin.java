@@ -68,6 +68,7 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
 
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);
+		mBtnBack.setVisibility(View.INVISIBLE);
 
 		// 初始化设备类型选择器
 		mSpinnerDevType = (Spinner) findViewById(R.id.spinnerDeviceType);
@@ -104,7 +105,6 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
 		mBtnScanQrCode = (ImageButton) findViewById(R.id.btnScanCode);
 		mBtnScanQrCode.setOnClickListener(this);
 
-		mTextTitle.setText(R.string.guide_module_title_device_sn);
 
 		// 设置登录方式为本地登录
 		FunSupport.getInstance().setLoginType(FunLoginType.LOGIN_BY_LOCAL);
@@ -112,8 +112,8 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
 		// 监听设备类事件
 		FunSupport.getInstance().registerOnFunDeviceListener(this);
 
-		mEditDevSN.setText("");
-		mEditDevLoginName.setText("");
+		mEditDevSN.setText("e3d3e308c1aeff5c");
+		mEditDevLoginName.setText("admin");
 		mEditDevLoginPasswd.setText("");
 		mEditDevIP.setText("");
 		mEditDevIpLoginName.setText("");

@@ -91,7 +91,6 @@ public class ActivityGuideDeviceCamera
 	private RelativeLayout mLayoutTop = null;
 	private TextView mTextTitle = null;
 	private ImageButton mBtnBack = null;
-	private ImageButton mBtnSetup = null;
 
 	private FunDevice mFunDevice = null;
 
@@ -177,6 +176,7 @@ public class ActivityGuideDeviceCamera
 
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);
+		mBtnBack.setVisibility(View.GONE);
 
 		mLayoutVideoWnd = (RelativeLayout) findViewById(R.id.layoutPlayWnd);
 
@@ -196,7 +196,6 @@ public class ActivityGuideDeviceCamera
 		mBtnRecord.setOnClickListener(this);
 		mBtnScreenRatio.setOnClickListener(this);
 		mBtnFishEyeInfo.setOnClickListener(this);
-
 		mTextVideoStat = (TextView) findViewById(R.id.textVideoStat);
 
 //		mBtnVoiceTalk = (RelativeLayout) findViewById(R.id.btnVoiceTalk);
@@ -253,10 +252,6 @@ public class ActivityGuideDeviceCamera
 		mVideoControlLayout = (LinearLayout) findViewById(R.id.layoutVideoControl);
 
 		mTextStreamType = (TextView) findViewById(R.id.textStreamStat);
-
-		setNavagateRightButton(R.layout.imagebutton_settings);
-		mBtnSetup = (ImageButton) findViewById(R.id.btnSettings);
-		mBtnSetup.setOnClickListener(this);
 
 //		mRlIntercomType = findViewById(R.id.rl_intercom_type);
 //		mRlIntercomType.setOnClickListener(this);
@@ -935,25 +930,23 @@ public class ActivityGuideDeviceCamera
 		LinearLayout.LayoutParams layoutParamsT = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
 				ViewGroup.LayoutParams.WRAP_CONTENT);
 		layoutParamsT.setMargins(m, m, m, m);
-		textView.setLayoutParams(layoutParamsT);
-		textView.setText(R.string.device_opt_channel);
-		textView.setTextSize(UIFactory.dip2px(this, 10));
-		textView.setTextColor(getResources().getColor(R.color.theme_color));
-		mLayoutChannel.addView(textView);
+
 
 		Button bt = new Button(this);
 		bt.setId(1101);
-		bt.setTextColor(getResources().getColor(R.color.theme_color));
+		//bt.setTextColor(getResources().getColor(R.color.theme_color));
 		bt.setPadding(p, p, p, p);
 		bt.setLayoutParams(layoutParamsT);
 		bt.setText(R.string.device_camera_channels_preview_title);
+		bt.setBackgroundResource(R.drawable.common_button_selector_white);
 		bt.setOnClickListener(this);
 		mLayoutChannel.addView(bt);
 
 		for (int i = 0; i < channelCount; i++) {
 			Button btn = new Button(this);
 			btn.setId(1000 + i);
-			btn.setTextColor(getResources().getColor(R.color.theme_color));
+			//btn.setTextColor(getResources().getColor(R.color.theme_color));
+			btn.setBackgroundResource(R.drawable.common_button_selector_white);
 			btn.setPadding(p, p, p, p);
 			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(UIFactory.dip2px(this, 40),
 					UIFactory.dip2px(this, 40));

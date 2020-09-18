@@ -39,7 +39,7 @@ public class ActivityGuideMain extends ActivityGuide implements OnFunLoginListen
 
 		// 2.设备相关
 		mGuideModules.add(new DemoModule(R.drawable.icon_device,
-				R.string.guide_module_title_device, 
+				R.string.guide_module_title_device,
 				R.string.guide_module_desc_device,
 				ActivityGuideDevice.class));
 

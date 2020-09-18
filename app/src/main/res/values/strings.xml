@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Konnexx Services</string>
-    <string name="app_welcome">Welcome to Demo for FunSDK!\n©2016, Powered by XiongMai.</string>
+    <string name="app_welcome">Welcome to Konnexx Services Surveilance</string>
     <string name="common_confirm">OK</string>
     <string name="common_cancel">Cancel</string>
     <string name="common_skip">Skip</string>
@@ -104,7 +104,7 @@
     <string name="user_register_get_verify_code">Click</string>
     <!-- 多通道相关字符 -->
     <string name="device_camera_channels_preview">Channels Preview：</string>
-    <string name="device_camera_channels_preview_title">Channels Preview</string>
+    <string name="device_camera_channels_preview_title">Preview</string>
     <!-- 设备相关 -->
     <string name="device_login">Device Login</string>
     <string name="device_login_sn">Serial Number</string>

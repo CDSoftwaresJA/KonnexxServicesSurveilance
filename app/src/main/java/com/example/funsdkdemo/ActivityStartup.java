@@ -103,7 +103,7 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 		if ( mLoginHasFinished && mWaitTimeout ) {
 			Intent intent = new Intent();
 			
-			intent.setClass(this, ActivityGuideMain.class);
+			intent.setClass(this, ActivityGuideDeviceSNLogin.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			
 			startActivity(intent);

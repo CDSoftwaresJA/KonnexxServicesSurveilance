@@ -80,7 +80,7 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);
 		
-		cadapter = new GridCameraChannelsPreviewsAdapter(this, 4);
+		cadapter = new GridCameraChannelsPreviewsAdapter(this, 31);
 		gridview.setAdapter(cadapter);
 	}
 

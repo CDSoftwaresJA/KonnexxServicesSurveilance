@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Carl Duncan-FunSDKDemo_Android_Old2018.iml" filepath="$PROJECT_DIR$/.idea/modules/Carl Duncan-FunSDKDemo_Android_Old2018.iml" group="FunSDKDemo_Android_Old2018" />
       <module fileurl="file://$PROJECT_DIR$/FunSDKDemo_Android_Old2018.iml" filepath="$PROJECT_DIR$/FunSDKDemo_Android_Old2018.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FunSDKDemo_Android_Old2018-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FunSDKDemo_Android_Old2018-app.iml" group="FunSDKDemo_Android_Old2018/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KonnexxServicesSurveilance.iml" filepath="$PROJECT_DIR$/.idea/modules/KonnexxServicesSurveilance.iml" group="KonnexxServicesSurveilance" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/KonnexxServicesSurveilance-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/KonnexxServicesSurveilance-app.iml" group="KonnexxServicesSurveilance/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
