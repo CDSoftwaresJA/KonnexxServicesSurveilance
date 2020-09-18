@@ -104,10 +104,11 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 			Intent intent = new Intent();
 			
 			intent.setClass(this, ActivityGuideDeviceSNLogin.class);
+
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			
 			startActivity(intent);
-			
+			overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 			finish();
 		}
 	}

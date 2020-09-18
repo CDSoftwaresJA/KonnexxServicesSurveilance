@@ -11,9 +11,7 @@
         android:id="@+id/layoutPlayWnd"
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:background="#ff000000" >
 
         <com.lib.funsdk.support.widget.FunVideoView
@@ -85,6 +83,7 @@
                 <Button
                     android:id="@+id/btnStream"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/media_stream_switch"
                     android:textColor="@drawable/common_text_selector" />
@@ -99,6 +98,7 @@
                 <Button
                     android:id="@+id/btnRecord"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_record"
                     android:textColor="@drawable/common_text_selector" />
@@ -113,6 +113,7 @@
                 <Button
                     android:id="@+id/btnFishEyeInfo"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_fisheye_info"
                     android:textColor="@drawable/common_text_selector" />
@@ -120,6 +121,7 @@
                 <Button
                     android:id="@+id/btnDevCapture"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="设备端抓图"
                     android:textColor="@drawable/common_text_selector" />

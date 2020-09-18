@@ -32,8 +32,8 @@
     </item>
     <item >
         <shape>
-            <gradient android:startColor="@color/transparent"
-                android:endColor="@color/transparent"/>
+            <gradient android:startColor="@color/item_pressed"
+                android:endColor="@color/item_pressed"/>
             <stroke android:width="0.5dp" 
                     android:color="@color/demo_desc"  />
             <corners 

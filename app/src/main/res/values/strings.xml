@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Konnexx Services</string>
+    <string name="app_name">Konnexx Surveillance</string>
     <string name="app_welcome">Welcome to Konnexx Services Surveilance</string>
     <string name="common_confirm">OK</string>
     <string name="common_cancel">Cancel</string>

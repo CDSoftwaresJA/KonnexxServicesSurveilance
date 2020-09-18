@@ -264,7 +264,7 @@ public class ActivityGuideDeviceCamera
 		FunSupport.getInstance().registerOnFunDeviceOptListener(this);
 
 		
-		mTextTitle.setText(mFunDevice.devName);
+		mTextTitle.setText("Dashboard");
 
 		// 允许横竖屏切换
 		// setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
@@ -488,7 +488,7 @@ public class ActivityGuideDeviceCamera
 								i = Integer.parseInt(preset);
 							}
 							if (i > 200) {
-								 Toast.makeText(getApplicationContext(),R.string.user_input_preset_number_warn, Toast.LENGTH_SHORT).show();
+								 //Toast.makeText(getApplicationContext(),R.string.user_input_preset_number_warn, Toast.LENGTH_SHORT).show();
 							} else {
 								// 注意：如果是IPC/摇头机,channel = 0, 否则channel=-1，以实际使用设备为准，如果需要兼容，可以两条命令同时发送
 								OPPTZControl cmd = new OPPTZControl(OPPTZControl.CMD_SET_PRESET, 0, i);
@@ -1228,7 +1228,7 @@ public class ActivityGuideDeviceCamera
 		} else if (OPPTZPreset.CONFIG_NAME.equals(configName)) {
 
 		} else if (OPPTZControl.CONFIG_NAME.equals(configName)) {
-			Toast.makeText(getApplicationContext(), R.string.user_set_preset_succeed, Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), R.string.user_set_preset_succeed, Toast.LENGTH_SHORT).show();
 
 			// 重新获取预置点列表
 //			requestPTZPreset();
@@ -1272,7 +1272,7 @@ public class ActivityGuideDeviceCamera
 	public void onDeviceSetConfigFailed(final FunDevice funDevice, 
 			final String configName, final Integer errCode) {
 		if (OPPTZControl.CONFIG_NAME.equals(configName)) {
-			Toast.makeText(getApplicationContext(), R.string.user_set_preset_fail, Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), R.string.user_set_preset_fail, Toast.LENGTH_SHORT).show();
 		}
 	}
 
