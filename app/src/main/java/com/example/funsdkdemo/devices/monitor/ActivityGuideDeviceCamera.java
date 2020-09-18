@@ -932,15 +932,15 @@ public class ActivityGuideDeviceCamera
 		layoutParamsT.setMargins(m, m, m, m);
 
 
-		Button bt = new Button(this);
-		bt.setId(1101);
-		//bt.setTextColor(getResources().getColor(R.color.theme_color));
-		bt.setPadding(p, p, p, p);
-		bt.setLayoutParams(layoutParamsT);
-		bt.setText(R.string.device_camera_channels_preview_title);
-		bt.setBackgroundResource(R.drawable.common_button_selector_white);
-		bt.setOnClickListener(this);
-		mLayoutChannel.addView(bt);
+//		Button bt = new Button(this);
+//		bt.setId(1101);
+//		//bt.setTextColor(getResources().getColor(R.color.theme_color));
+//		bt.setPadding(p, p, p, p);
+//		bt.setLayoutParams(layoutParamsT);
+//		bt.setText(R.string.device_camera_channels_preview_title);
+//		bt.setBackgroundResource(R.drawable.common_button_selector_white);
+//		bt.setOnClickListener(this);
+//		mLayoutChannel.addView(bt);
 
 		for (int i = 0; i < channelCount; i++) {
 			Button btn = new Button(this);
