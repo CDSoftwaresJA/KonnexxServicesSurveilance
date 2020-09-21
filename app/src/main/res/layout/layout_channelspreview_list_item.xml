@@ -5,8 +5,8 @@
     android:orientation="vertical" >
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         >
 
         <com.lib.funsdk.support.widget.FunVideoView

@@ -31,7 +31,7 @@ import java.util.List;
  * @author Administrator
  */
 public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickListener,OnInfoListener,OnErrorListener{
-	
+
 	private GridView gridview;
 	private FunVideoView funVideoView;
 	private TextView textStart;
@@ -49,7 +49,7 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case MESSAGE_PLAY_MEDIA:
-				playrealvideo();
+				playRealVideo();
 				break;
 			default:
 				break;
@@ -72,19 +72,18 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		
 		int devid = getIntent().getIntExtra("FUNDEVICE_ID", 0);
 		mFunDevice = FunSupport.getInstance().findDeviceById(devid);
-		
 		setContentView(R.layout.activity_device_camera_channelspreview);
 		gridview = (GridView) findViewById(R.id.Frames_grid_view);
 		mTextTitle = (TextView) findViewById(R.id.textViewInTopLayout);
 		mTextTitle.setText(R.string.device_camera_channels_preview_title);
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);
-		
-		cadapter = new GridCameraChannelsPreviewsAdapter(this, 31);
+		cadapter = new GridCameraChannelsPreviewsAdapter(this, mFunDevice.channel.nChnCount);
 		gridview.setAdapter(cadapter);
 	}
 
-    private class OnItemViewTouchListener implements View.OnTouchListener {
+
+	private class OnItemViewTouchListener implements View.OnTouchListener {
 
         private int mChannel;
 
@@ -107,8 +106,8 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 
     }
 	
-	public void playrealvideo(){
-		for (int i = 0; i < 4; i++) {
+	public void playRealVideo(){
+		for (int i = 0; i < mFunDevice.channel.nChnCount; i++) {
 			View v = gridview.findViewWithTag(i);
 			if ( null != v ) {
 				funVideoView = (FunVideoView)v.findViewById(R.id.funVideoView1);
@@ -123,10 +122,11 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 			textStart.setText(R.string.media_player_opening);
 			textStart.setVisibility(View.VISIBLE);
 			
-//			cadapter.notifyDataSetInvalidated();
+			cadapter.notifyDataSetInvalidated();
 
 			if (mFunDevice.isRemote) {
 				funVideoView.setRealDevice(mFunDevice.getDevSn(), i);
+
 			} else {
 				String deviceIp = FunSupport.getInstance().getDeviceWifiManager().getGatewayIp();
 				funVideoView.setRealDevice(deviceIp, i);

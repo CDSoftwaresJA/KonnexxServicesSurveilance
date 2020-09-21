@@ -54,6 +54,8 @@ public class GridCameraChannelsPreviewsAdapter extends BaseAdapter{
 				
 				channelsItem.textView = (TextView) view.findViewById(R.id.textVideoStat1);
 				channelsItem.funVideoView = (FunVideoView) view.findViewById(R.id.funVideoView1);
+
+
 			}
 		} else {
 			view = (LinearLayout) convertView;
