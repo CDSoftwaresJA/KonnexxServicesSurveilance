@@ -1,10 +1,14 @@
 package com.example.funsdkdemo;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -38,15 +42,17 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 		
 		startPushAlarmNotification();
 		Hawk.init(getBaseContext()).build();
+		if (ContextCompat.checkSelfPermission(getBaseContext(),Manifest.permission.CAMERA)== PackageManager.PERMISSION_DENIED){
+			ActivityCompat.requestPermissions(ActivityStartup.this,new String [] {Manifest.permission.CAMERA},1);
+
+		}
+
 		mHandler.sendEmptyMessageDelayed(MESSAGE_ENTER_MAINMENU, 2000);
 		
-		// 监听用户登录/登出时间
 		FunSupport.getInstance().registerOnFunLoginListener(this);
 		
-		// 尝试登录上一次成功登录的自动登录
 		if ( !FunSupport.getInstance().getAutoLogin()
 						|| !FunSupport.getInstance().loginByLastUser() ) {
-			// 之前没有账号成功登录或者没有设置为自动登录,结束登录流程
 			mHandler.sendEmptyMessage(MESSAGE_LOGIN_FUNISHED);
 		}
 	}
@@ -70,7 +76,7 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 			case MESSAGE_ENTER_MAINMENU:
 				{
 					mWaitTimeout = true;
-					String mac = Hawk.get("ID");
+					String mac = Hawk.get("mac");
 					String name=Hawk.get("name");
 					if (mac !=null && name !=null){
 						FunDevice mFunDevice = FunSupport.getInstance().buildTempDeivce(FunDevType.EE_DEV_CAMERA, mac);
