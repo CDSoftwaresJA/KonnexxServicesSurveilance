@@ -24,6 +24,7 @@ import com.lib.funsdk.support.models.FunDevStatus;
 import com.lib.funsdk.support.models.FunDevType;
 import com.lib.funsdk.support.models.FunDevice;
 import com.lib.funsdk.support.models.FunLoginType;
+import com.orhanobut.hawk.Hawk;
 
 public class ActivityGuideDeviceSNLogin extends ActivityDemo
 		implements OnClickListener, OnFunDeviceListener, OnItemSelectedListener {
@@ -178,7 +179,8 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
                     //Save the password to local file
                     FunDevicePassword.getInstance().saveDevicePassword(mFunDevice.getDevSn(), mEditDevLoginPasswd.getText().toString().trim());
                     FunSDK.DevSetLocalPwd(mFunDevice.getDevSn(), "admin", mEditDevLoginPasswd.getText().toString().trim());
-
+					Hawk.put("mac",mFunDevice.devMac);
+					Hawk.put("name",mFunDevice.loginName);
 					DeviceActivitys.startDeviceActivity(ActivityGuideDeviceSNLogin.this, mFunDevice);
 				}
 

@@ -10,8 +10,12 @@ import android.view.WindowManager;
 
 import com.example.funsdkdemo.alarm.ServiceGuideLanAlarmNotification;
 import com.example.funsdkdemo.alarm.ServiceGuidePushAlarmNotification;
+import com.lib.SDKCONST;
 import com.lib.funsdk.support.FunSupport;
 import com.lib.funsdk.support.OnFunLoginListener;
+import com.lib.funsdk.support.models.FunDevType;
+import com.lib.funsdk.support.models.FunDevice;
+import com.orhanobut.hawk.Hawk;
 
 public class ActivityStartup extends FragmentActivity implements OnFunLoginListener {
 
@@ -21,6 +25,7 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 	
 	private boolean mLoginHasFinished = false;
 	private boolean mWaitTimeout = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,13 +36,8 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 		
 		setContentView(R.layout.activity_startup);
 		
-		// 启动报警推送消息服务
 		startPushAlarmNotification();
-		
-		// 启动局域网报警功能
-		// startLanAlarmNotification();
-		
-		// 最小延时2秒打开主界面
+		Hawk.init(getBaseContext()).build();
 		mHandler.sendEmptyMessageDelayed(MESSAGE_ENTER_MAINMENU, 2000);
 		
 		// 监听用户登录/登出时间
@@ -70,8 +70,17 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 			case MESSAGE_ENTER_MAINMENU:
 				{
 					mWaitTimeout = true;
+					String mac = Hawk.get("ID");
+					String name=Hawk.get("name");
+					if (mac !=null && name !=null){
+						FunDevice mFunDevice = FunSupport.getInstance().buildTempDeivce(FunDevType.EE_DEV_CAMERA, mac);
+						mFunDevice.loginName=name;
+						DeviceActivitys.startDeviceActivity(ActivityStartup.this, mFunDevice);
+					}else{
+						enterSDKGuide();
+					}
+
 					
-					enterSDKGuide();
 				}
 				break;
 			case MESSAGE_LOGIN_FUNISHED:
@@ -81,6 +90,7 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 					enterSDKGuide();
 				}
 				break;
+
 			}
 		}
 		
@@ -101,12 +111,13 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 	private void enterSDKGuide() {
 		// 在登录动作完成后才允许进入Demo主界面
 		if ( mLoginHasFinished && mWaitTimeout ) {
+
+
 			Intent intent = new Intent();
-			
 			intent.setClass(this, ActivityGuideDeviceSNLogin.class);
 
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			
+
 			startActivity(intent);
 			overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 			finish();
