@@ -31,6 +31,7 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
 
 	private TextView mTextTitle = null;
 	private ImageButton mBtnBack = null;
+	private ImageButton secondaryBtn;
 
 	private Spinner mSpinnerDevType = null;
 	private Spinner mSpinnerDevIpType = null;
@@ -66,6 +67,10 @@ public class ActivityGuideDeviceSNLogin extends ActivityDemo
 		setContentView(R.layout.activity_device_sn_login);
 
 		mTextTitle = (TextView) findViewById(R.id.textViewInTopLayout);
+
+		secondaryBtn = findViewById(R.id.secondaryBtn);
+
+		secondaryBtn.setVisibility(View.INVISIBLE);
 
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);

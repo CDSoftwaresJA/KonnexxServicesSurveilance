@@ -42,6 +42,8 @@ import android.widget.Toast;
 import com.example.common.DialogInputPasswd;
 import com.example.common.UIFactory;
 import com.example.funsdkdemo.ActivityDemo;
+import com.example.funsdkdemo.ActivityGuide;
+import com.example.funsdkdemo.ActivityGuideDeviceSNLogin;
 import com.example.funsdkdemo.R;
 import com.example.funsdkdemo.devices.ActivityDeviceFishEyeInfo;
 import com.example.funsdkdemo.devices.ActivityGuideDevicePictureList;
@@ -68,10 +70,12 @@ import com.lib.funsdk.support.utils.FileUtils;
 import com.lib.funsdk.support.utils.TalkManager;
 import com.lib.funsdk.support.widget.FunVideoView;
 import com.lib.sdk.struct.H264_DVR_FILE_DATA;
+import com.orhanobut.hawk.Hawk;
 
 import java.io.File;
 import java.util.Arrays;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 import static com.lib.funsdk.support.models.FunDevType.EE_DEV_SPORTCAMERA;
 
 /**
@@ -106,6 +110,7 @@ public class ActivityGuideDeviceCamera
 	private Button mBtnRecord = null;
 	private Button mBtnScreenRatio = null;
 	private Button mBtnFishEyeInfo = null;
+	private ImageButton secondaryBtn;
 //	private Button mBtnGetPreset = null;
 //	private Button mBtnSetPreset = null;
 //	private Button mBtnDevCapture;
@@ -187,6 +192,18 @@ public class ActivityGuideDeviceCamera
 		mBtnRecord = (Button) findViewById(R.id.btnRecord);
 		mBtnScreenRatio = (Button) findViewById(R.id.btnScreenRatio);
 		mBtnFishEyeInfo = (Button) findViewById(R.id.btnFishEyeInfo);
+		secondaryBtn = findViewById(R.id.secondaryBtn);
+
+		secondaryBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(ActivityGuideDeviceCamera.this, ActivityGuideDeviceSNLogin.class);
+				intent.setFlags(FLAG_ACTIVITY_CLEAR_TASK );
+				Hawk.delete("mac");
+				Hawk.delete("name");
+				startActivity(intent);
+			}
+		});
 
 //		mLayoutRecording = (RelativeLayout) findViewById(R.id.layout_recording);
 		mBtnPlay.setOnClickListener(this);

@@ -34,6 +34,7 @@ public class ActivityGuideUserLogin extends ActivityDemo implements OnClickListe
 	private Button mBtnLoginByWeibo = null;
 	private Button mBtnLoginByQQ = null;
 	private Button mBtnRegister = null;
+	private ImageButton secondaryBtn = null;
 	
 	private Button mBtnCheckSavePasswd = null;
 	private Button mBtnCheckAutoLogin = null;
@@ -49,6 +50,10 @@ public class ActivityGuideUserLogin extends ActivityDemo implements OnClickListe
 		
 		mBtnBack = (ImageButton)findViewById(R.id.backBtnInTopLayout);
 		mBtnBack.setOnClickListener(this);
+
+		secondaryBtn = findViewById(R.id.secondaryBtn);
+
+		secondaryBtn.setVisibility(View.INVISIBLE);
 		
 		mTextTitle.setText(R.string.guide_module_title_user_login);
 		
