@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.funsdkdemo.ActivityDemo;
@@ -39,6 +41,7 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 	private ImageButton mBtnBack;
 	private GridCameraChannelsPreviewsAdapter  cadapter;
 	private FunDevice mFunDevice;
+	private RelativeLayout layoutTop;
 	private List<TextView> textvlist = new ArrayList<TextView>();
 	private List<FunVideoView> funvideovlist = new ArrayList<FunVideoView>();
 	private final int MESSAGE_PLAY_MEDIA = 0x100;
@@ -77,6 +80,10 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		mTextTitle = (TextView) findViewById(R.id.textViewInTopLayout);
 		mTextTitle.setText(R.string.device_camera_channels_preview_title);
 		mBtnBack = (ImageButton) findViewById(R.id.backBtnInTopLayout);
+		layoutTop = findViewById(R.id.layoutTop);
+
+		ImageButton secondaryButton = findViewById(R.id.secondaryBtn);
+		secondaryButton.setVisibility(View.INVISIBLE);
 		mBtnBack.setOnClickListener(this);
 		cadapter = new GridCameraChannelsPreviewsAdapter(this, mFunDevice.channel.nChnCount);
 		gridview.setAdapter(cadapter);

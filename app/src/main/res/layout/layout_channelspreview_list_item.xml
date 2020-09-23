@@ -7,10 +7,13 @@
     <FrameLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_margin="10dp"
         >
 
         <com.lib.funsdk.support.widget.FunVideoView
             android:id="@+id/funVideoView1"
+            android:alpha="1"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

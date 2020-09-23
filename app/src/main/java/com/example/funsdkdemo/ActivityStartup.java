@@ -82,6 +82,8 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 						FunDevice mFunDevice = FunSupport.getInstance().buildTempDeivce(FunDevType.EE_DEV_CAMERA, mac);
 						mFunDevice.loginName=name;
 						DeviceActivitys.startDeviceActivity(ActivityStartup.this, mFunDevice);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+
 					}else{
 						enterSDKGuide();
 					}

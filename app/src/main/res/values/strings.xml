@@ -104,7 +104,7 @@
     <string name="user_register_get_verify_code">Click</string>
     <!-- 多通道相关字符 -->
     <string name="device_camera_channels_preview">Channels Preview：</string>
-    <string name="device_camera_channels_preview_title">Preview</string>
+    <string name="device_camera_channels_preview_title">Multiview</string>
     <!-- 设备相关 -->
     <string name="device_login">Device Login</string>
     <string name="device_login_sn">Serial Number</string>
