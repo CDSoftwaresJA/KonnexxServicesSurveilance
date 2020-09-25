@@ -10,6 +10,7 @@ import android.os.Message;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AbsListView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -86,7 +87,10 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		secondaryButton.setVisibility(View.INVISIBLE);
 		mBtnBack.setOnClickListener(this);
 		cadapter = new GridCameraChannelsPreviewsAdapter(this, mFunDevice.channel.nChnCount);
+		gridview.setNumColumns(3);
 		gridview.setAdapter(cadapter);
+
+
 	}
 
 

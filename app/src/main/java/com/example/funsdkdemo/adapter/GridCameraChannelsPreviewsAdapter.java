@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.funsdkdemo.R;
+import com.example.funsdkdemo.devices.monitor.ActivityGuideDevicePreview;
+import com.lib.funsdk.support.FunSupport;
 import com.lib.funsdk.support.widget.FunVideoView;
 
 public class GridCameraChannelsPreviewsAdapter extends BaseAdapter{
@@ -51,11 +53,8 @@ public class GridCameraChannelsPreviewsAdapter extends BaseAdapter{
 			if (inflater != null) {
 				System.out.println("TTT---->>> new");
 				view = (LinearLayout) inflater.inflate(R.layout.layout_channelspreview_list_item, null);
-				
 				channelsItem.textView = (TextView) view.findViewById(R.id.textVideoStat1);
 				channelsItem.funVideoView = (FunVideoView) view.findViewById(R.id.funVideoView1);
-
-
 			}
 		} else {
 			view = (LinearLayout) convertView;
@@ -65,7 +64,7 @@ public class GridCameraChannelsPreviewsAdapter extends BaseAdapter{
 		
 		return view;
 	}
-	
+
 	public final class ChannelsItem{
 		
 		public TextView textView;
