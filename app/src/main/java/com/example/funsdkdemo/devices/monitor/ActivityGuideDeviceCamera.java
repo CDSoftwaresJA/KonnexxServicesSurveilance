@@ -619,7 +619,7 @@ public class ActivityGuideDeviceCamera
 	private void tryToRecord() {
 
 		if (!mFunVideoView.isPlaying() || mFunVideoView.isPaused()) {
-			showToast(R.string.media_record_failure_need_playing);
+			//showToast(R.string.media_record_failure_need_playing);
 			return;
 		}
 
@@ -627,11 +627,11 @@ public class ActivityGuideDeviceCamera
 		if (mFunVideoView.bRecord) {
 			mFunVideoView.stopRecordVideo();
 //			mLayoutRecording.setVisibility(View.INVISIBLE);
-			toastRecordSucess(mFunVideoView.getFilePath());
+		//	toastRecordSucess(mFunVideoView.getFilePath());
 		} else {
 			mFunVideoView.startRecordVideo(null);
 //			mLayoutRecording.setVisibility(View.VISIBLE);
-			showToast(R.string.media_record_start);
+			//showToast(R.string.media_record_start);
 		}
 
 	}
@@ -1027,7 +1027,7 @@ public class ActivityGuideDeviceCamera
             case MESSAGE_TOAST_SCREENSHOT_PREVIEW:
                 {
 				String path = (String) msg.obj;
-				toastScreenShotPreview(path);
+			//	toastScreenShotPreview(path);
 			}
 				break;
             case MESSAGE_OPEN_VOICE:
@@ -1186,7 +1186,7 @@ public class ActivityGuideDeviceCamera
 	public void onDeviceLoginFailed(final FunDevice funDevice, final Integer errCode) {
 		// 设备登录失败
 		hideWaitDialog();
-		showToast(FunError.getErrorStr(errCode));
+		//showToast(FunError.getErrorStr(errCode));
 
 		// 如果账号密码不正确,那么需要提示用户,输入密码重新登录
 		if (errCode == FunError.EE_DVR_PASSWORD_NOT_VALID) {
@@ -1211,7 +1211,7 @@ public class ActivityGuideDeviceCamera
 				requestChannelSystemFunction();
 				return;
 			}
-			channelCount = funDevice.channel.nChnCount;
+			channelCount = 20;
 			// if (channelCount >= 5) {
 			// channelCount = 5;
 			// }
@@ -1228,7 +1228,7 @@ public class ActivityGuideDeviceCamera
 			
 			isGetSysFirst = false;
 			
-			showToast(getType(funDevice.getNetConnectType()));
+			//showToast(getType(funDevice.getNetConnectType()));
 			
 			// 获取信息成功后,如果WiFi连接了就自动播放
 			// 此处逻辑客户自定义
@@ -1271,7 +1271,7 @@ public class ActivityGuideDeviceCamera
 
 	@Override
 	public void onDeviceGetConfigFailed(final FunDevice funDevice, final Integer errCode) {
-		showToast(FunError.getErrorStr(errCode));
+		//showToast(FunError.getErrorStr(errCode));
 		if (errCode == -11406) {
 			funDevice.invalidConfig(OPPTZPreset.CONFIG_NAME);
 		}
@@ -1335,9 +1335,9 @@ public class ActivityGuideDeviceCamera
 	@Override
 	public boolean onError(MediaPlayer mp, int what, int extra) {
 		// 播放失败
-		showToast(getResources().getString(R.string.media_play_error) 
-				+ " : " 
-				+ FunError.getErrorStr(extra));
+//		showToast(getResources().getString(R.string.media_play_error)
+//				+ " : "
+//				+ FunError.getErrorStr(extra));
 
 		if ( FunError.EE_TPS_NOT_SUP_MAIN == extra
 				|| FunError.EE_DSS_NOT_SUP_MAIN == extra ) {

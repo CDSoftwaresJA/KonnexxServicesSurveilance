@@ -65,12 +65,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#6c000000"
+                android:visibility="invisible"
 
                 android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/btnPlay"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_play"
                     android:textColor="@drawable/common_text_selector" />
@@ -78,6 +80,7 @@
                 <Button
                     android:id="@+id/btnStop"
                     style="@style/video_control_button"
+                    android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_stop"
                     android:textColor="@drawable/common_text_selector" />
@@ -85,6 +88,7 @@
                 <Button
                     android:id="@+id/btnStream"
                     style="@style/video_control_button"
+
                     android:visibility="gone"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/media_stream_switch"
@@ -92,6 +96,7 @@
 
                 <Button
                     android:id="@+id/btnCapture"
+                    android:visibility="gone"
                     style="@style/video_control_button"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_capture"
@@ -101,12 +106,14 @@
                     android:id="@+id/btnRecord"
                     style="@style/video_control_button"
                     android:visibility="gone"
+
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_record"
                     android:textColor="@drawable/common_text_selector" />
 
                 <Button
                     android:id="@+id/btnScreenRatio"
+                    android:visibility="gone"
                     style="@style/video_control_button"
                     android:background="@drawable/video_control_button_selector"
                     android:text="@string/device_opt_fullscreen"

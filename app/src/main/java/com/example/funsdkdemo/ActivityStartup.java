@@ -83,6 +83,7 @@ public class ActivityStartup extends FragmentActivity implements OnFunLoginListe
 						mFunDevice.loginName=name;
 						DeviceActivitys.startDeviceActivity(ActivityStartup.this, mFunDevice);
 						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+						finish();
 
 					}else{
 						enterSDKGuide();

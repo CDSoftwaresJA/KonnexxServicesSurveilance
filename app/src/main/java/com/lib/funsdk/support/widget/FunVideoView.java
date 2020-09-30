@@ -877,31 +877,31 @@ public class FunVideoView extends LinearLayout implements IFunSDKResult {
 		float dy = Math.abs(moveY - downY);
 		float ratio = dy / dx;
 		if (dy >= 50 || dx >= 50) {
-			if (moveY > downY && moveX > downX) {
-				if (ratio > 1.5) {
-					Toast.makeText(mContext,"DOWN",Toast.LENGTH_LONG).show();
-				} else {
-					Toast.makeText(mContext,"RIGHT",Toast.LENGTH_LONG).show();
-				}
-			} else if (moveY > downY && moveX < downX) {
-				if (ratio > 1.5) {
-					Toast.makeText(mContext,"DOWN",Toast.LENGTH_LONG).show();
-				} else {
-					Toast.makeText(mContext,"LEFT",Toast.LENGTH_LONG).show();
-				}
-			} else if (moveY < downY && moveX < downX) {
-				if (ratio > 1.5) {
-					Toast.makeText(mContext,"UP",Toast.LENGTH_LONG).show();
-				} else {
-					Toast.makeText(mContext,"LEFT",Toast.LENGTH_LONG).show();
-				}
-			} else if (moveY < downY && moveX > downX) {
-				if (ratio > 1.5) {
-					Toast.makeText(mContext,"UP",Toast.LENGTH_LONG).show();
-				} else {
-					Toast.makeText(mContext,"RIGHT",Toast.LENGTH_LONG).show();
-				}
-			}
+//			if (moveY > downY && moveX > downX) {
+//				if (ratio > 1.5) {
+//					Toast.makeText(mContext,"DOWN",Toast.LENGTH_LONG).show();
+//				} else {
+//					Toast.makeText(mContext,"RIGHT",Toast.LENGTH_LONG).show();
+//				}
+//			} else if (moveY > downY && moveX < downX) {
+//				if (ratio > 1.5) {
+//					Toast.makeText(mContext,"DOWN",Toast.LENGTH_LONG).show();
+//				} else {
+//					Toast.makeText(mContext,"LEFT",Toast.LENGTH_LONG).show();
+//				}
+//			} else if (moveY < downY && moveX < downX) {
+//				if (ratio > 1.5) {
+//					Toast.makeText(mContext,"UP",Toast.LENGTH_LONG).show();
+//				} else {
+//					Toast.makeText(mContext,"LEFT",Toast.LENGTH_LONG).show();
+//				}
+//			} else if (moveY < downY && moveX > downX) {
+//				if (ratio > 1.5) {
+//					Toast.makeText(mContext,"UP",Toast.LENGTH_LONG).show();
+//				} else {
+//					Toast.makeText(mContext,"RIGHT",Toast.LENGTH_LONG).show();
+//				}
+//			}
 		}
 	}
 }

@@ -9,10 +9,12 @@
         layout="@layout/layout_top_navigate_theme" />
     <GridView
         android:id="@+id/Frames_grid_view"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_margin="10sp"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:horizontalSpacing="10dip"
+        android:verticalSpacing="10dip"
         android:numColumns="4"
         android:stretchMode="columnWidth"
         >
