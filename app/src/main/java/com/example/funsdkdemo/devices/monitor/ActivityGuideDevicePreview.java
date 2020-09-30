@@ -86,8 +86,8 @@ public class ActivityGuideDevicePreview extends ActivityDemo implements OnClickL
 		ImageButton secondaryButton = findViewById(R.id.secondaryBtn);
 		secondaryButton.setVisibility(View.INVISIBLE);
 		mBtnBack.setOnClickListener(this);
-		cadapter = new GridCameraChannelsPreviewsAdapter(this, mFunDevice.channel.nChnCount);
-		gridview.setNumColumns(3);
+		cadapter = new GridCameraChannelsPreviewsAdapter(this, 20);
+		gridview.setNumColumns(4);
 		gridview.setAdapter(cadapter);
 
 
